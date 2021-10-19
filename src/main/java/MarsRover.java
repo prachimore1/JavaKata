@@ -20,4 +20,17 @@ public class MarsRover {
     public Direction getCurrentDirection() {
         return this.direction;
     }
+
+    public void turn(char orientation) {
+        switch (orientation) {
+            case 'L':
+                this.direction = this.direction.turnLeft();
+                break;
+            case 'R':
+                this.direction = this.direction.turnRight();
+                break;
+            default:
+                break;
+        }
+    }
 }

@@ -32,6 +32,32 @@ public class MarsRoverTest {
         assertArrayEquals(rover.getCurrentPosition(), expectedCoordinates);
     }
 
+    @Test
+    public void turnRoverLeft() {
+        MarsRover rover = new MarsRover(3,4, Direction.WEST);
 
+        rover.turn('L');
+
+        assertEquals(rover.getCurrentDirection(), Direction.SOUTH);
+    }
+
+    @Test
+    public void turnRoverRight() {
+        MarsRover rover = new MarsRover(3,4, Direction.WEST);
+
+        rover.turn('R');
+
+        assertEquals(rover.getCurrentDirection(), Direction.NORTH);
+    }
+
+    @Test
+    public void turnRoverLeftTwice() {
+        MarsRover rover = new MarsRover(3,4, Direction.EAST);
+
+        rover.turn('L');
+        rover.turn('L');
+
+        assertEquals(rover.getCurrentDirection(), Direction.WEST);
+    }
 
 }
